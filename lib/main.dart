@@ -15,6 +15,7 @@ import 'package:learning_way/pages/function/stickyDemo.dart';
 import 'package:learning_way/pages/function/toast_demo_page.dart';
 import 'package:learning_way/pages/home/home_bar.dart';
 import 'package:learning_way/pages/launch.dart';
+import 'package:learning_way/pages/login/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         home: Launch(),
         routes: <String, WidgetBuilder>{
           'home': (BuildContext context) => HomeBar(),
+          'login': (BuildContext context) => LoginPage(),
           'fun/futureBuilder': (BuildContext context) => FutureBuilderPoint(),
           'fun/goodsCarAnimation': (BuildContext context) => GoodsCarAnimation(),
           'fun/barChart': (BuildContext context) => BarChartPage(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learning_way/component/text_style.dart';
 import 'package:learning_way/pages/home/home.dart';
+import 'package:learning_way/pages/service/user-service.dart';
 import 'package:learning_way/pages/user_center/mine.dart';
 
 List<Widget> bodys = [Home(),UserCenter()];
@@ -45,6 +46,7 @@ class HomeBarState extends State<HomeBar> {
       ],
       currentIndex: curTabIndex,
       onTap: (int index){
+        UserService.checkLoginStatus(context);
         curTabIndex = index;
         this.setState((){});
       },

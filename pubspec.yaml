@@ -32,6 +32,7 @@ dependencies:
   sliding_up_panel: ^0.3.6
   #toast提示
   bot_toast: ^2.0.0+2
+  flutter_easyloading: ^1.1.0
   #图片预览
   photo_view: ^0.7.0
   #轮播图
@@ -44,6 +45,7 @@ dependencies:
   passcode_screen: ^1.0.2
   #状态管理
   provider: ^3.1.0
+  rxdart: ^0.22.1+1
   #本地缓存
   shared_preferences: ^0.5.4+1
 

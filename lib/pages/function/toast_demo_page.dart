@@ -1,5 +1,5 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:learning_way/component/PhotoViewGalleryScreen.dart';
 import 'package:learning_way/component/PhotoViewSimpleScreen.dart';
 import 'package:learning_way/component/text_style.dart';
@@ -33,7 +33,7 @@ class ToastDemoPageView extends State<ToastDemoPage> {
             FlatButton(
               child: Text("弹出一个文本框"),
               onPressed: () {
-                BotToast.showText(text: "欢迎使用");
+                EasyLoading.showToast("欢迎使用");
               },
             ),
             Container(
@@ -74,7 +74,7 @@ class ToastDemoPageView extends State<ToastDemoPage> {
                     child: Image.asset(item),
                   ),
                   onTap: () {
-                    BotToast.showText(text: "$index");
+                    EasyLoading.showToast("$index");
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
                       return PhotoViewGalleryScreen(

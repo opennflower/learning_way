@@ -1,5 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:learning_way/constant/constant.dart';
 import 'package:learning_way/i18n/chinese_cupertino_localizations.dart';
@@ -16,17 +17,16 @@ import 'package:learning_way/pages/function/toast_demo_page.dart';
 import 'package:learning_way/pages/home/home_bar.dart';
 import 'package:learning_way/pages/launch.dart';
 import 'package:learning_way/pages/login/login.dart';
+import 'package:learning_way/pages/login/register.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BotToastInit(
-      //初始化botToast  .使用BotToastInit直接包裹MaterialApp 直接在app根入口观察路由，自动管理当前的context，后续调用时无需再关心context，可以在任意地方调用
+    return FlutterEasyLoading(
       child: MaterialApp(
         title: '学习之路',
-        navigatorObservers: [BotToastNavigatorObserver()],
         theme: ThemeData(
           primarySwatch: Colors.blue,
           primaryColor: Constant.primaryColor,
@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           'home': (BuildContext context) => HomeBar(),
           'login': (BuildContext context) => LoginPage(),
+          'register': (BuildContext context) => Register(),
           'fun/futureBuilder': (BuildContext context) => FutureBuilderPoint(),
           'fun/goodsCarAnimation': (BuildContext context) => GoodsCarAnimation(),
           'fun/barChart': (BuildContext context) => BarChartPage(),

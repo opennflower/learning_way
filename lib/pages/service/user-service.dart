@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:learning_way/component/alert.dart';
 import 'package:learning_way/model/user.dart';
+import 'package:learning_way/pages/service/native_data.dart';
 import 'package:learning_way/store/observable.dart';
 import 'package:learning_way/store/user.dart';
 import 'package:rxdart/rxdart.dart';
@@ -50,7 +51,9 @@ class UserService {
   }
 
   static Observable<User> loginUser(String phone, String pwd) {
-    
+    return NativeData.login(phone,pwd).doOnData((user){
+      handUserLogined(user);
+    });
   }
 
   static void logout() {

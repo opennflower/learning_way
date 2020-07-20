@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_way/pages/service/user-service.dart';
 
 class Launch extends StatelessWidget{
   @override
@@ -17,6 +18,11 @@ class LaunchStateful extends StatefulWidget{
 }
 
 class LaunchState extends State<LaunchStateful>{
+  @override
+  void initState() { 
+    super.initState();
+    UserService.autoLogin();//热重启后,自动缓存登录
+  }
   @override
   Widget build(BuildContext context) {
     return Center(

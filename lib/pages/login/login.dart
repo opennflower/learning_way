@@ -224,14 +224,12 @@ class _LoginPageState extends State<LoginPage> {
             return;
           }
           EasyLoading.show(status: 'loading');
-          EasyLoading.showToast("登录成功");
-          Navigator.pushNamedAndRemoveUntil(
-              context, 'home', (router) => router == null);
-          // Observable<User> observable;
-          //  observable.listen((User user){
-          //    EasyLoading.showToast("登录成功");
-          //     Navigator.pushNamedAndRemoveUntil(context, 'home', (router) => router == null);
-          //  });
+          Observable<User> observable;
+           observable = UserService.loginUser(phone, pwd);
+           observable.listen((User user){
+             EasyLoading.showToast("登录成功");
+              Navigator.pushNamedAndRemoveUntil(context, 'home', (router) => router == null);
+           });
         },
       ),
     );

@@ -38,10 +38,12 @@ class UserCenterState extends State<UserCenterStateful> {
     return SafeArea(
       child: Container(
         height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: Stack(
           children: <Widget>[
             userInfoView(),
             basicDataWidget(),
+            menulabelwidget(),
           ],
         ),
       ),
@@ -62,9 +64,9 @@ class UserCenterState extends State<UserCenterStateful> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // topButtonWidget(),
-          // userWidget(),
-          // activeCountWidget(),
+          topButtonWidget(),
+          userWidget(),
+          activeCountWidget(),
         ],
       ),
     );
@@ -151,6 +153,54 @@ class UserCenterState extends State<UserCenterStateful> {
              dataItem('+10','收藏数'),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget menulabelwidget(){
+    return Positioned(
+      top: 310,
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        padding: EdgeInsets.only(left: 20,right: 20),
+        child: ListView(
+          children: <Widget>[
+            menuItem('我的关注','mine_care.png',(){}),
+            menuItem('我的分享','mine_care.png',()=>Navigator.pushNamed(context, 'uc/mineshare')),
+            menuItem('我的关注','mine_care.png',(){}),
+            menuItem('我的关注','mine_care.png',(){}),
+            menuItem('我的关注','mine_care.png',(){}),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget menuItem(String name,String icon,Function onPressed){
+    return GestureDetector(
+      onTap:onPressed ,
+      child: Container(
+        padding: EdgeInsets.only(left: 10,bottom: 5,top: 5),
+        margin: EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(width: 1,color: Colors.grey[200])),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              child: Row(
+                children: <Widget>[
+                  iconImage(icon,24),
+                  SizedBox(width: 8),
+                  CNText(name,size: 15,color: Colors.lightBlueAccent),
+                ],
+              ),
+            ),
+            Icon(Icons.chevron_right,size: 24,color: Colors.black87)
+          ],
         ),
       ),
     );

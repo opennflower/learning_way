@@ -18,6 +18,7 @@ import 'package:learning_way/pages/home/home_bar.dart';
 import 'package:learning_way/pages/launch.dart';
 import 'package:learning_way/pages/login/login.dart';
 import 'package:learning_way/pages/login/register.dart';
+import 'package:learning_way/pages/user_center/mine_share.dart';
 
 void main() => runApp(MyApp());
 
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
           'fun/flipCard': (BuildContext context) => FilpCardDemoPage(),
           'fun/clockscreen': (BuildContext context) => ClockScreen(),
           'fun/sliver': (BuildContext context) => StickyDemo(),
+          'uc/mineshare': (BuildContext context) => MineShare(),
         },
       ),
     );

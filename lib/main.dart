@@ -14,6 +14,8 @@ import 'package:learning_way/pages/function/goodsCar_animation.dart';
 import 'package:learning_way/pages/function/header_demo_page.dart';
 import 'package:learning_way/pages/function/stickyDemo.dart';
 import 'package:learning_way/pages/function/toast_demo_page.dart';
+import 'package:learning_way/pages/function/video_play.dart';
+import 'package:learning_way/pages/function/youTube_palyer.dart';
 import 'package:learning_way/pages/home/home_bar.dart';
 import 'package:learning_way/pages/launch.dart';
 import 'package:learning_way/pages/login/login.dart';
@@ -66,6 +68,8 @@ class MyApp extends StatelessWidget {
           'fun/clockscreen': (BuildContext context) => ClockScreen(),
           'fun/sliver': (BuildContext context) => StickyDemo(),
           'uc/mineshare': (BuildContext context) => MineShare(),
+          'fun/videos': (BuildContext context) => VideoPlay(),
+          'fun/youTube': (BuildContext context) => YouTuBePlayer(),
         },
       ),
     );

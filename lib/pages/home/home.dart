@@ -70,6 +70,14 @@ class HomeState extends State<HomeStateful> {
           'Sliver',
           onPressed: () => Navigator.pushNamed(context, 'fun/sliver'),
         ),
+        lineElement(
+          '滚动播放',
+          onPressed: () => Navigator.pushNamed(context, 'fun/videos'),
+        ),
+        lineElement(
+          'youTube视频播放器',
+          onPressed: () => Navigator.pushNamed(context, 'fun/youTube'),
+        ),
       ],
     );
   }

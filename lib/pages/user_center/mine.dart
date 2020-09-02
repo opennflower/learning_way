@@ -106,9 +106,9 @@ class UserCenterState extends State<UserCenterStateful> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                CNText(_user.nickname, color: Colors.white, size: 15),
+                CNText(_user?.nickname??'Hello,Nickname', color: Colors.white, size: 15),
                 SizedBox(height: 8),
-                CNText('ID:${_user.userId}', color: Colors.white, size: 15)
+                CNText('ID:${_user?.userId ?? 0}', color: Colors.white, size: 15)
               ],
             ),
           ),
